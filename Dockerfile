@@ -22,7 +22,8 @@ RUN apt-get update -qq \
 	&& apt-get install -y libcurl3 libxml2 \
 	&& rm -rf /deploy
 
-WORKDIR /
+WORKDIR /app
+ADD . /app
 VOLUME /data
 
-CMD ["/bin/bash", "/usr/local/bin/deploy.sh"]
+CMD ["/bin/bash", "/app/deploy.sh"]
