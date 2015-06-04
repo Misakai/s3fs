@@ -11,5 +11,10 @@ export AWSSECRETACCESSKEY=$AWS_SECRET_KEY
 
 /usr/bin/s3fs -o allow_other -o use_cache=/tmp $BUCKET /data
 
+if [[ $APPSTART ]]
+  then
+  $APPSTART
+fi
+
 # Example:
 # docker run --name s3fs -d  --cap-add mknod --cap-add sys_admin --device=/dev/fuse -e BUCKET=XXX -e AWS_ACCESS_KEY=XXX -e AWS_SECRET_KEY=XXX misakai/s3fs
