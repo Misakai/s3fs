@@ -11,9 +11,9 @@ export AWSSECRETACCESSKEY=$AWS_SECRET_KEY
 
 /usr/bin/s3fs -o allow_other -o use_cache=/tmp $APP_BUCKET /data
 
-if [[ $APPSTART ]]
+if [[ $APP_START ]]
   then
-  $APPSTART
+  $APP_START
 fi
 
 # Example:
